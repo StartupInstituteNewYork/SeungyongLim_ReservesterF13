@@ -6,4 +6,9 @@ copy to terminal -> pg_ctl -D /usr/local/var/postgres -l logfile start
 
 which psql 
 _____________________________
-rails new blog -d postgresql 
+rails new blog -d postgresql ||
+rails new blog --database=postgresql
+_____________________________
+to run heroku
+gem 'rails_12factor', group: :production
+
