@@ -1,0 +1,9 @@
+the list of commands I ran for lab1/part2
+psql --version
+brew install postgresql 
+copy to terminal -> init initdb /usr/local/var/postgres -E utf8
+copy to terminal -> pg_ctl -D /usr/local/var/postgres -l logfile start
+
+which psql 
+_____________________________
+rails new blog -d postgresql 
