@@ -4,12 +4,21 @@
   <title>Reservester</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to "Home", root_path %>
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav navbar-right">
+<%= link_to "Home", root_path  %>
+<%= link_to "New Post", new_restaurant_path %>
+</ul>
+</div>
 
+<div class="container">
 <%= yield %>
+</div>
 
 </body>
 </html>

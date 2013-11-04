@@ -13,6 +13,7 @@
 	<td><%= @restaurant.full_address %></td>
 	<td><%= @restaurant.phone_number %></td>
 	</tr>
-	
-
 </table>
+
+<%= link_to "Edit", edit_restaurant_path(@restaurant) %>
+<%= link_to "All", restaurants_path %>
