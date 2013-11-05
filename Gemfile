@@ -10,6 +10,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+gem 'carrierwave'
 
 group :production do 
 	gem 'pg'
@@ -18,6 +19,8 @@ end
 
 group :development, :test do 
 	gem 'mysql2'
+	gem 'rspec-rails' 
+	gem 'factory_girl_rails'
 end
 
 group :doc do
