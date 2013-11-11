@@ -13,6 +13,10 @@ gem 'jbuilder', '~> 1.2'
 gem 'carrierwave'
 gem 'devise'
 gem 'rmagick'
+gem 'mini_magick'
+gem 'dotenv-rails', :groups => [:development, :test]
+gem 'fog'
+gem 'unf'
 
 group :production do 
 	gem 'pg'

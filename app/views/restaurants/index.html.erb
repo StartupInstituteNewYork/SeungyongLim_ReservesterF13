@@ -1,11 +1,12 @@
 <h1>Restaurant listings:</h1>
 
 <table>
-	<tr>
+	<tr>	
 	<th>Name</th>
 	<th>Description</th>
 	<th>Full Address</th>
 	<th>Phone Number</th>
+	<th>Image<th>
 	</tr>
 	<% @restaurants.each do |restaurant| %>
 	<tr>
@@ -13,6 +14,7 @@
 	<td><%= restaurant.description %></td>
 	<td><%= restaurant.full_address %></td>
 	<td><%= restaurant.phone_number %></td>
+	<td><%= image_tag restaurant.image.thumbnail.url if restaurant.image %></td>
 	<td><%= link_to 'Show', restaurant_path(restaurant) %></td>
 	<td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
 	<td><%= link_to 'Destroy', restaurant_path(restaurant), method: :delete, data: {confirm: "Are you sure?"} %></td>

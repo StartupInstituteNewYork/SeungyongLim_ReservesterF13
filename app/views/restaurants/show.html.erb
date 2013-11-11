@@ -1,19 +1,12 @@
 <h1>Restaurant info:</h1>
-<table>
-	<tr>
-	<th>Name</th>
-	<th>Description</th>
-	<th>Full Address</th>
-	<th>Phone Number</th>
-	</tr>
 
-	<tr>
-	<td><%= @restaurant.name %></td>
-	<td><%= @restaurant.description %></td>
-	<td><%= @restaurant.full_address %></td>
-	<td><%= @restaurant.phone_number %></td>
-	</tr>
-</table>
+<%= image_tag @restaurant.image.masthead.url if @restaurant.image%>
+	
+<%= @restaurant.name %>
+<%= @restaurant.description %>
+<%= @restaurant.full_address %>
+<%= @restaurant.phone_number %>
+	
 
 <%= link_to "Edit", edit_restaurant_path(@restaurant) %>
 <%= link_to "Destroy", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure you want to delete this restaurant?"} %>
