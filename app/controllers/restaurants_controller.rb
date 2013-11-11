@@ -1,4 +1,7 @@
 class RestaurantsController < ApplicationController
+
+  before_filter :authenticate_owner!, only: [:new, :create]
+  before_filter :confirm_ownership, only: [:edit, :update, :destroy]
   
   def index
     @restaurants=Restaurant.all
@@ -9,10 +12,10 @@ class RestaurantsController < ApplicationController
   end
   
   def create
-  	@restaurant = Restaurant.new(post_params)
+    @restaurant=current_owner.restaurants.build(params[:restaurant])
   	@restaurant.save
 
-  	redirect_to @restaurant	
+  	redirect_to @restaurant, notice: "Restaurant was successfully created"
   end
   
   def show
@@ -26,7 +29,7 @@ class RestaurantsController < ApplicationController
   def update
     @restaurant=Restaurant.find(params[:id])
     @restaurant.update(post_params)
-    redirect_to @restaurant
+    redirect_to @restaurant, notice: "Restaurant was successfully updated"
   end
 
   def destroy
@@ -37,6 +40,13 @@ class RestaurantsController < ApplicationController
   end
 
 private
+  def confirm_ownership
+    restaurant = Restaurant.find(params[:id])
+    if restaurant.owner != current_owner
+      redirect_to :back, :flash => "{:alert =>you don't own this restaurant."
+    end
+  end
+
   def post_params
   	params.require(:restaurant).permit(:name, :description, :full_address, :phone_number)
   end

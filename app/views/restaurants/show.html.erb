@@ -16,4 +16,5 @@
 </table>
 
 <%= link_to "Edit", edit_restaurant_path(@restaurant) %>
-<%= link_to "All", restaurants_path %>
+<%= link_to "Destroy", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure you want to delete this restaurant?"} %>
+<%= link_to "Back", restaurants_path %>

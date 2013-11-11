@@ -9,17 +9,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-default" role="navigation">
-<%= link_to "Home", root_path, class: "btn btn-default"  %>
-<%= link_to "New Post", new_restaurant_path, class: "btn btn-default" %>
+<nav class="navbar navbar-inverse">
+<%= link_to "Home", root_path, class: "btn"  %>
+<%= link_to "New Post", new_restaurant_path, class: "btn" %>
+<% if current_owner %>
+	<%= link_to "Sign Out", destroy_owner_session_path, :method => :delete %>
+<% else %>
+	<%= link_to "sign in", new_owner_session_path %>
+<% end %>
 </nav>
 </div>
 
 <div class="container">
-<div class="jumbotron">
-<%= yield %>
+	<div class="jumbotron">
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+	
+	</div>
 </div>
-</div>
+	<div class="container">	
+		<%= yield %>
+	</div>	
 
 </body>
 </html>

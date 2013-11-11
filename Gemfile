@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'carrierwave'
 gem 'devise'
+gem 'rmagick'
 
 group :production do 
 	gem 'pg'
