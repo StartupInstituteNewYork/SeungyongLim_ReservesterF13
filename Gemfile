@@ -14,6 +14,7 @@ gem 'devise'
 gem 'rmagick'
 gem 'mini_magick'
 gem 'dotenv-rails', :groups => [:development, :test]
+#aws
 gem 'fog'
 gem 'unf'
 
