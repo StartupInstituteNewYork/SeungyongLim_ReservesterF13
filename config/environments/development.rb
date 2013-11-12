@@ -26,5 +26,6 @@ Reservester::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+  BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end

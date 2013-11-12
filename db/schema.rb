@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131112003926) do
+ActiveRecord::Schema.define(version: 20131112163716) do
 
   create_table "owners", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 20131112003926) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
-    t.string   "pdf"
     t.string   "menu"
+    t.integer  "owner_id"
   end
 
 end

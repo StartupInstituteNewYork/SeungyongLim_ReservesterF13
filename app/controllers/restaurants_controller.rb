@@ -12,7 +12,7 @@ class RestaurantsController < ApplicationController
   end
   
   def create
-    @restaurant=Restaurant.new(post_params)
+    @restaurant=Restaurant.new(restaurant_permit)
   	@restaurant.save
 
   	redirect_to @restaurant, notice: "Restaurant was successfully created"
@@ -28,8 +28,11 @@ class RestaurantsController < ApplicationController
 
   def update
     @restaurant=Restaurant.find(params[:id])
-    @restaurant.update(post_params)
-    redirect_to @restaurant, notice: "Restaurant was successfully updated"
+    if @restaurant.update_attributes(params[:restaurant])
+      redirect_to @restaurant, notice: 'Restaurant was successfully updated.'
+    else
+      render action: "edit"
+    end
   end
 
   def destroy
@@ -40,15 +43,21 @@ class RestaurantsController < ApplicationController
   end
 
 private
+  def restaurant_permit
+    params.require(:restaurant).permit(:name, :description, :full_address, :phone_number, :image)
+  end
+
+
   def confirm_ownership
     restaurant = Restaurant.find(params[:id])
     if restaurant.owner != current_owner
       redirect_to :back, flash: {:alert =>"you don't own this restaurant."}
     end
   end
-
-  def post_params
-  	params.require(:restaurant).permit(:name, :description, :full_address, :phone_number, :image)
-  end
 end
+
+  # def post_params
+  # 	params.require(:restaurant).permit(:name, :description, :full_address, :phone_number, :image)
+  # end
+
 
