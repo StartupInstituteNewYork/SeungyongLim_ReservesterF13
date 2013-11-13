@@ -8,11 +8,15 @@ class RestaurantsController < ApplicationController
   end
   
   def new
-    @restaurant=Restaurant.new
+    if owner_signed_in?
+      @restaurant=Restaurant.new
+    else 
+      redirect_to :back, flash: {alert: "You must be signed in!"}
+    end
   end
   
   def create
-    @restaurant=Restaurant.new(restaurant_permit)
+    @restaurant=current_owner.restaurants.build(restaurant_permit)
   	@restaurant.save
 
   	redirect_to @restaurant, notice: "Restaurant was successfully created"
