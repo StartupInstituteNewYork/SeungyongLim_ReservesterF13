@@ -4,8 +4,10 @@ CarrierWave.configure do |config|
     :aws_access_key_id      => ENV['AWS_ACCESS_KEY'],
     :aws_secret_access_key  => ENV['AWS_SECRET_KEY']
   }
-  config.fog_directory= ENV['reservester-for-startup']
+  config.fog_directory = ENV['S3_BUCKET']
   config.cache_dir = "#{Rails.root}/tmp/uploads"
+  config.fog_public = false
+  config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}
   
 end
 # CarrierWave.configure do |config|

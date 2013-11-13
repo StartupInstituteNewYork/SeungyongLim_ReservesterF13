@@ -14,6 +14,7 @@ gem 'devise'
 gem 'rmagick'
 gem 'mini_magick'
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'aws-sdk'
 #better_errors
 gem 'better_errors', :groups => [:development]
 gem "binding_of_caller"
