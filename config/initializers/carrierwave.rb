@@ -8,7 +8,7 @@ CarrierWave.configure do |config|
   }
 
     config.storage = :fog
-    config.fog_directory = ENV['S3_BUCKET']
+    config.fog_directory = 'reservester-for-startup'
     config.cache_dir = "#{Rails.root}/tmp/uploads"
     config.fog_public = false
     config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}
