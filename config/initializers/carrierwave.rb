@@ -5,6 +5,11 @@ CarrierWave.configure do |config|
     :aws_secret_access_key  => ENV['AWS_SECRET_KEY'],
     :region => ENV['S3_REGION']
   }
+  if Rails.env.development?
+    config.storage = :file
+  else
+    config.storage = :fog
+  end
   config.fog_directory = ENV['S3_BUCKET']
   config.cache_dir = "#{Rails.root}/tmp/uploads"
   config.fog_public = false
@@ -27,11 +32,7 @@ end
 #     config.enable_processing = false
 #     config.root = "#{Rails.root}/tmp"
 
-#   elsif Rails.env.development?
-#     config.storage = :file
-#   else
-#     config.storage = :fog
-#   end
+#   
 
 #   config.cache_dir = "#{Rails.root}/tmp/uploads" # To let CarrierWave work on heroku
 #   config.fog_directory = ENV['reservester-for-startup']

@@ -1,9 +1,9 @@
 Reservester::Application.routes.draw do
-  # devise_for :owners 
+  devise_for :owners 
 
-  devise_for :owners do 
-     get '/owners/sign_out' => 'devise/sessions#destroy' 
-  end
+  # devise_for :owners do 
+  #    get '/owners/sign_out' => 'devise/sessions#destroy' 
+  # end
   root to: 'restaurants#index'
   resources :restaurants
 
