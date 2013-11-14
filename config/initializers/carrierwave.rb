@@ -1,19 +1,22 @@
 CarrierWave.configure do |config|
-  config.fog_credentials = {
+  if Rails.env.production?
+    config.fog_credentials = {
     :provider               => 'AWS',
     :aws_access_key_id      => ENV['AWS_ACCESS_KEY'],
     :aws_secret_access_key  => ENV['AWS_SECRET_KEY'],
     :region => ENV['S3_REGION']
   }
-  if Rails.env.development?
-    config.storage = :file
-  else
+
     config.storage = :fog
+    config.fog_directory = ENV['S3_BUCKET']
+    config.cache_dir = "#{Rails.root}/tmp/uploads"
+    config.fog_public = false
+    config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}
+  else
+    config.storage = :file
+    config.enable_processing = false
   end
-  config.fog_directory = ENV['S3_BUCKET']
-  config.cache_dir = "#{Rails.root}/tmp/uploads"
-  config.fog_public = false
-  config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}
+  
 
   
 end
