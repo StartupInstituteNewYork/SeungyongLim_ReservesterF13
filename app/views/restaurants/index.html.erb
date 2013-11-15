@@ -1,24 +1,13 @@
-<h1>Restaurant listings:</h1>
+<h1>Restaurants</h1>
 
-<table>
-	<tr>	
-	<th>Name</th>
-	<th>Description</th>
-	<th>Full Address</th>
-	<th>Phone Number</th>
-	<th>Image<th>
-	</tr>
+
+<ul>
 	<% @restaurants.each do |restaurant| %>
-	<tr>
-	<td><%= restaurant.name %></td>
-	<td><%= restaurant.description %></td>
-	<td><%= restaurant.full_address %></td>
-	<td><%= restaurant.phone_number %></td>
-	<td><%= image_tag restaurant.image.thumbnail.url if restaurant.image %></td>
-	<td><%= link_to 'Show', restaurant_path(restaurant) %></td>
-	<td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-	<td><%= link_to 'Destroy', restaurant_path(restaurant), method: :delete, data: {confirm: "Are you sure?"} %></td>
-	</tr>
-	<% end %>	
-</table>
-	<%- link_to "New", new_restaurant_path %>
+    <li>
+      <%= image_tag restaurant.image.thumbnail.url if restaurant.image? %>
+      <%= link_to restaurant.name, restaurant %></td>
+    </li>
+  	<% end %>
+</ul>
+
+	<%= link_to "New", new_restaurant_path %>

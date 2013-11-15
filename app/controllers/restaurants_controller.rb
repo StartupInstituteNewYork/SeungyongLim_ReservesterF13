@@ -8,19 +8,17 @@ class RestaurantsController < ApplicationController
   end
   
   def new   
-   if owner_signed_in?
       @restaurant=Restaurant.new
-    else 
-      redirect_to :back, flash: {alert: "You must be signed in!"}
-    end
   end
   
   def create
     @restaurant=current_owner.restaurants.build(restaurant_permit)
-  	@restaurant.save
 
-  	redirect_to @restaurant, notice: "Restaurant was successfully created"
-  end
+    if @restaurant.save
+      redirect_to @restaurant, notice: 'Restaurant was successfully created.'
+    else
+      render action: "new" 
+    end
   
   def show
   	@restaurant=Restaurant.find(params[:id])
@@ -60,8 +58,5 @@ private
   end
 end
 
-  # def post_params
-  # 	params.require(:restaurant).permit(:name, :description, :full_address, :phone_number, :image)
-  # end
 
 
