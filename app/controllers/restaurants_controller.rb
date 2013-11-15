@@ -19,6 +19,7 @@ class RestaurantsController < ApplicationController
     else
       render action: "new" 
     end
+  end
   
   def show
   	@restaurant=Restaurant.find(params[:id])
