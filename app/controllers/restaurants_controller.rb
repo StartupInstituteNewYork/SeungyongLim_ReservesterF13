@@ -7,8 +7,8 @@ class RestaurantsController < ApplicationController
     @restaurants=Restaurant.all
   end
   
-  def new
-    if owner_signed_in?
+  def new   
+   if owner_signed_in?
       @restaurant=Restaurant.new
     else 
       redirect_to :back, flash: {alert: "You must be signed in!"}

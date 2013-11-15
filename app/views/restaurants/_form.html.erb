@@ -23,8 +23,8 @@
 
 <p>
     <%= f.label :image %>
-    <%= image_tag(@restaurant.image_url) if @restaurant.image? %>
-    <%= f.file_field :image %>
+<!--     <%= image_tag(@restaurant.image_url) if @restaurant.image? %>
+ -->    <%= f.file_field :image %>
     <%= f.hidden_field :image_cache %>
 </p>
 <p>

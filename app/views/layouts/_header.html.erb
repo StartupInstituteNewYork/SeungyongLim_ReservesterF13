@@ -1,0 +1,11 @@
+<body>
+<nav class="navbar navbar-inverse">
+<%= link_to "Home", root_path, class: "btn"  %>
+<%= link_to "New Post", new_restaurant_path, class: "btn" %>
+<% if current_owner %>
+	<%= link_to "Sign Out", destroy_owner_session_path, method: :delete %>
+<% else %>
+	<%= link_to "sign in", new_owner_session_path %>
+<% end %>
+</nav>
+</div>
