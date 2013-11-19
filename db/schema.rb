@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113013631) do
+ActiveRecord::Schema.define(version: 20131119005058) do
 
   create_table "owners", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 20131113013631) do
 
   add_index "owners", ["email"], name: "index_owners_on_email", unique: true, using: :btree
   add_index "owners", ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true, using: :btree
+
+  create_table "reservations", force: true do |t|
+    t.text     "email"
+    t.datetime "requested_date"
+    t.string   "message"
+    t.integer  "restaurant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reservations", ["restaurant_id"], name: "index_reservations_on_restaurant_id", using: :btree
 
   create_table "restaurants", force: true do |t|
     t.string   "name"
