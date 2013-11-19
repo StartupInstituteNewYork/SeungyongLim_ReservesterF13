@@ -107,6 +107,7 @@ GEM
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     orm_adapter (0.4.0)
+    parsley-rails (1.1.18.0)
     pg (0.17.0)
     polyglot (0.3.3)
     rack (1.5.2)
@@ -202,6 +203,7 @@ DEPENDENCIES
   jquery-rails
   mini_magick
   mysql2
+  parsley-rails
   pg
   rails (= 4.0.0)
   rails_12factor
