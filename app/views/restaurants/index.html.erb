@@ -1,11 +1,12 @@
-<h1>Restaurants</h1>
-
-
+<div class="hero-unit">
+	<h1 class="center">Book your spot <small>very easy</small></h1>
+</div>
+<div class="center">
 <% @restaurants.each do |restaurant| %>
-<li>
+
 	<%= image_tag restaurant.image.thumbnail.url if restaurant.image? %>
-    <%= link_to restaurant.name, restaurant %>
-</li>
+    <%= link_to restaurant.name, restaurant_path(restaurant) %>
   	<% end %>
+</div>  	
 	<%= link_to "New Restaurant", new_restaurant_path %>
 

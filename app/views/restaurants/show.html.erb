@@ -1,19 +1,20 @@
+<div class="modal-body row">
+	<div class="col-md-8"><%= image_tag @restaurant.image.masthead.url if @restaurant.image%></div>
+	<div class="col-md-4">
+		name: <%= @restaurant.name %><br>
+		Description: <%= @restaurant.description %><br>
+		full-address:<%= @restaurant.full_address %><br>
+		<% if @restaurant.owner %>
+		  <p><%= @restaurant.owner.email %></p>
+		  <p><%= @restaurant.owner.name %></p>
+		<% end %>
+	</div>
+</div>
 
-<%= image_tag @restaurant.image.masthead.url if @restaurant.image%>
 	
-<%= @restaurant.name %>
-<%= @restaurant.description %>
-<%= @restaurant.full_address %>
-<% if @restaurant.owner %>
-  <p><%= @restaurant.owner.email %></p>
-  <p><%= @restaurant.owner.name %></p>
-<% end %>
-
-
-	
-<% if @restaurant.owner == current_owner %>
 <%= link_to "Edit", edit_restaurant_path(@restaurant) %>
-<%= link_to "Destroy", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure you want to delete this restaurant?"} %>
+<%= link_to "Destroy", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure you want to delete this restaurant?" } %>
+
 <%= link_to "Back", restaurants_path %>
 
 <%= form_for([@restaurant,@restaurant.reservations.build]) do |f| %>
@@ -22,8 +23,8 @@
  	<%= f.text_field :email %>
  </p>
  <p>
- 	<%= f.label :date_time %>
- 	<%= f.text_field :date_time %>
+ 	<%= f.label :requested_date %>
+ 	<%= f.text_field :requested_date %>
  </p>
  <p>
  	<%= f.label :message %>  
@@ -32,9 +33,6 @@
  <p>
  	<%= f.submit %>
  </p>	
-<% end %> 
-<% end %>
-<p>
-<img src="http://maps.googleapis.com/maps/api/staticmap?center=#{@restaurant.full_address}&zoom=8&size=500x300&key=AIzaSyC1iwgqU6etjiU7FIqPViR6lGCKGf3dKOE" alt="Google Map Location" >
-</P>
+	<% end %> 
+
 

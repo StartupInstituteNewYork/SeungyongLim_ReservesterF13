@@ -1,16 +1,20 @@
 
-<%= form_for @restaurant, data: {validate: 'parsley'} do |f| %>
-<%= f.label :name %><br>
-<%= f.text_field :name, placeholder: 'name'  %>
-<%= f.label :description %><br>
-<%= f.text_area :description, placeholder: 'description' %>
+<%= form_for @restaurant, :html => {:multipart => true} ,data: {validate: 'parsley'} do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name, placeholder: 'name'  %><br>
+<%= f.label :description %>
+<%= f.text_area :description, placeholder: 'description' %><br>
 
-<%= f.label :full_address %><br>
-<%= f.text_area :full_address, placeholder: 'full address' %>
-<%= f.label :phone_number %><br>
+<%= f.label :full_address %>	
+<%= f.text_area :full_address, placeholder: 'full address' %><br>
+<%= f.label :phone_number %>
 <%= f.text_field :phone_number, placeholder: 'phone number', :'data-type' => 'digits'  %>
+
 <%= image_tag(@restaurant.image_url) if @restaurant.image? %>
-<%= f.file_field :image %>
-<%= f.hidden_field :image_cache %>
+	<%= f.file_field :image %>
+	<%= f.hidden_field :image_cache %>
+	
+	<%= f.label :remove_image %>
+	<%= f.check_box :remove_image %>
 <%= f.submit %>
 <% end %>
