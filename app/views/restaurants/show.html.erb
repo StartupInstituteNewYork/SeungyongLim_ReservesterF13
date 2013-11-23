@@ -4,6 +4,7 @@
 		name: <%= @restaurant.name %><br>
 		Description: <%= @restaurant.description %><br>
 		full-address:<%= @restaurant.full_address %><br>
+		Menu in PDf:<%= @restaurant.menu %><br>
 		<% if @restaurant.owner %>
 		  <p><%= @restaurant.owner.email %></p>
 		  <p><%= @restaurant.owner.name %></p>
@@ -31,8 +32,10 @@
  	<%= f.text_field :message %>  
  </P> 	
  <p>
- 	<%= f.submit %>
+ 	<%= f.submit "New spot" %>
  </p>	
 	<% end %> 
+
+<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=New+York,NY&zoom=13&size=600x300&key={AIzaSyC1iwgqU6etjiU7FIqPViR6lGCKGf3dKOE}" %>
 
 

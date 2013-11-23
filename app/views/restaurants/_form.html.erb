@@ -12,9 +12,10 @@
 
 <%= image_tag(@restaurant.image_url) if @restaurant.image? %>
 	<%= f.file_field :image %>
-	<%= f.hidden_field :image_cache %>
-	
+	<%= f.hidden_field :image_cache %>	
 	<%= f.label :remove_image %>
-	<%= f.check_box :remove_image %>
+	<%= f.check_box :remove_image %><br>
+	<%= f.label :menu_pdf %>
+	<%= f.file_field :menu %>	
 <%= f.submit %>
 <% end %>
