@@ -1,12 +1,14 @@
 <body>
 <nav class="navbar navbar-inverse">
-<%= link_to "Home", root_path, class: "btn"  %>
-<%= link_to "New Post", new_restaurant_path, class: "btn" %>
-<% if current_owner %>
-	<%= link_to "Sign Out", destroy_owner_session_path, method: :delete %>
-<% else %>
-	<%= link_to "Log In", new_owner_session_path %>
-	<%= link_to "Sign Up", new_owner_registration_path %>
-<% end %>
+	<div class="nav_size">
+		<%= link_to "Home", root_path, class: "btn-lg"  %>
+		<%= link_to "New Post", new_restaurant_path, class: "btn-lg" %>
+		<% if current_owner %>
+			<%= link_to "Sign Out", destroy_owner_session_path, method: :delete, class: "btn-lg" %>
+		<% else %>
+			<%= link_to "Log In", new_owner_session_path, class: "btn-lg" %>
+			<%= link_to "Sign Up", new_owner_registration_path, class: "btn-lg" %>
+		<% end %>
+	</div>
 </nav>
 </div>

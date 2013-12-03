@@ -1,5 +1,15 @@
-@import 'bootstrap';
+@import url(http://fonts.googleapis.com/css?family=Loved+by+the+King);
+$font-family-sans-serif:'Loved by the King', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 $body-bg: #ecf0f1;
+$navbar-inverse-link-color: white;
+$navbar-inverse-bg: white;
+$navbar-default-bg: white;
+$navbar-height: 60px;
+
+
+
+@import 'bootstrap';
 
 .center {
      text-align: center;

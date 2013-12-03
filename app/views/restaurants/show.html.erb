@@ -1,8 +1,11 @@
-<div class="container">
+	<div class="aside">
+		<%= render "reservations/form" %>	
+	</div>	
 	<div class="modal-body row">
 		<div class="col-md-8">
+			
 			<p class="picture">
-				<%= image_tag @restaurant.image.masthead.url if @restaurant.image%>
+				<%= image_tag @restaurant.image.masthead.url, :size => "500*180" if @restaurant.image%>
 			</p>	
 		</div>
 		<div class="col-md-4 desc_cont">
@@ -46,9 +49,7 @@
 		<% end %>
 	</div><!--reservation container -->
 
-
-	<%= render "reservations/form" %>	
-</div>
+	
 <img src="http://maps.googleapis.com/maps/api/staticmap?center=New+York,NY&zoom=13&size=600x300&key={AIzaSyC1iwgqU6etjiU7FIqPViR6lGCKGf3dKOE}&senseor=false" />
 
 
