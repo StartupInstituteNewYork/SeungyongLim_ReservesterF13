@@ -5,7 +5,8 @@
 <% if current_owner %>
 	<%= link_to "Sign Out", destroy_owner_session_path, method: :delete %>
 <% else %>
-	<%= link_to "sign in", new_owner_session_path %>
+	<%= link_to "Log In", new_owner_session_path %>
+	<%= link_to "Sign Up", new_owner_registration_path %>
 <% end %>
 </nav>
 </div>

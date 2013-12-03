@@ -1,0 +1,19 @@
+<div class="desc_cont">
+	<h2>Reservation:</h2>
+	<%= form_for([@restaurant,@restaurant.reservations.build]) do |f| %>
+	 <p>
+	 	<%= f.label :Email %>
+	 	<%= f.text_field :email %>
+	 </p>
+	 <p>
+	
+	 </p>
+	 <p>
+	 	<%= f.label :Message %>  
+	 	<%= f.text_area :message %>  
+	 </P> 	
+	 <p>
+	 	<%= f.submit "Reservation Msg", class: "btn btn-lg btn-primary" %>
+	 </p>	
+		<% end %> 
+</div>		
