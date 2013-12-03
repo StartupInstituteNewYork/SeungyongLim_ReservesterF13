@@ -1,4 +1,5 @@
 Reservester::Application.routes.draw do
+  get "pages/home"
   devise_for :owners 
   
   root to: 'restaurants#index'

@@ -1,3 +1,7 @@
+body{
+	background-image: url();
+	background-repeat: no-repeat;	
+}
 .picture{
 	border: 4px groove white;
 	padding: 20px;
@@ -89,6 +93,7 @@ img.smaller{
 ul{
 	list-style: none;
 	text-align: center;
+	line-height: 15px;
 }
 
 li{
@@ -96,6 +101,29 @@ li{
 	display: inline;
 	font-size: 30px;
 }
-.cntr{
+.footer{
+	border: 4px;
 	background-color: white;
+    position: absolute;
+    text-align: center;
+    top: 2000px;
+    right: 600px;
 }
+.container {
+	margin-bottom: 10px;
+}
+
+span#dropbox {
+	border: 2px solid black;
+	background-color:#ffffe5; 
+	width:205px;
+	padding:20px;
+	height:80px;
+	display:none;
+	left: 100px;
+	top: 100px;
+	position: absolute;
+	z-index: 2px;
+	border-radius: 5px 20px 5px;
+}
+

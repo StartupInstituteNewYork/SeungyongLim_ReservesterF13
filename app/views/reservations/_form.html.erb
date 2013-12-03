@@ -1,6 +1,5 @@
-require 'active_support/time'
 
-	<h2>Reservation:</h2>
+	<h2>Reserve now:</h2>
 	<%= form_for([@restaurant,@restaurant.reservations.build]) do |f| %>
 	 <p>
 	 	<%= f.label :email %>
@@ -10,7 +9,7 @@ require 'active_support/time'
 	<span class="center"><%= f.file_field :menu %></span>
 	 </p>
 	 <p>
-	 	<%= f.datetime :requested_date %>
+	 	<%= f.date_select :requested_date %>
 	 <p>	
 	 <p>
 	 	<%= f.label :message %>  

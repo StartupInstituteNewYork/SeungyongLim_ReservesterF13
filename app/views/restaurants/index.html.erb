@@ -1,7 +1,9 @@
+<span id="carol"> </span>
 <div class="hero-unit">
 	<h1 class="center">Book & Pick your <span style="color: #ffb2b2">favorite</span> spot <small>very easy | just click | comfortable...</small></h1>
 </div>
 <div class="aside">
+	Date: <div id="datepicker"></div>
 	<h3>Get promo code:</h3>
 
 </div>	
@@ -9,7 +11,8 @@
 <div>	
 	<% @restaurants.each do |restaurant| %>
 		<%= link_to image_tag(restaurant.image.thumbnail.url, class: "smaller"),restaurant_path(restaurant) %> 
-  		<button class="btn btn-info"><small>Poke me</small></button>	
+  		<button class="btn btn-info"><small>Poke me</small></button>
+  		<span id="dropbox" style="font-style:italic">Today's Promo:</span>	
   	<% end %>
   	
 </div>
