@@ -1,3 +1,4 @@
+require 'active_support/time'
 
 	<h2>Reservation:</h2>
 	<%= form_for([@restaurant,@restaurant.reservations.build]) do |f| %>
@@ -9,8 +10,11 @@
 	<span class="center"><%= f.file_field :menu %></span>
 	 </p>
 	 <p>
+	 	<%= f.datetime :requested_date %>
+	 <p>	
+	 <p>
 	 	<%= f.label :message %>  
-	 	<%= f.text_area :message, :cols=>30, :rows=> 20 %>  
+	 	<%= f.text_area :message, :cols=>30, :rows=> 10 %>  
 	 </P> 	
 	 <p>
 	 	<%= f.submit "Reservation Msg", class: "btn btn-lg btn-primary" %>
