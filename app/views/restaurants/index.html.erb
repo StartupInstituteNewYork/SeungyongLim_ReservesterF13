@@ -1,15 +1,18 @@
 <div class="hero-unit">
-	<h1 class="center">Book your spot <small>very easy</small></h1>
-	<h5><%= @restaurants.count(:id) %></h5>
+	<h1 class="center">Book & Pick your <span style="color: #ffb2b2">favorite</span> spot <small>very easy | just click | comfortable...</small></h1>
 </div>
-<div id="restaurants">
+<div class="aside">
+	<h3>Get promo code:</h3>
+
+</div>	
+
+<div>	
 	<% @restaurants.each do |restaurant| %>
-	<div class="box">
-
-	<%= image_tag restaurant.image.thumbnail.url if restaurant.image? %>
-    <%= link_to restaurant.name, restaurant_path(restaurant) %>
+		<%= link_to image_tag(restaurant.image.thumbnail.url, class: "smaller"),restaurant_path(restaurant) %> 
+  		<button class="btn btn-info"><small>Poke me</small></button>	
   	<% end %>
-  	</div>
-</div>  	
+  	
+</div>
+<div>	
 	<%= link_to "New Restaurant", new_restaurant_path %>
-
+</div>

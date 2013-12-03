@@ -4,6 +4,7 @@
   <title>Reservester</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <%= csrf_meta_tags %>
@@ -13,7 +14,9 @@
 	<p class="alert"><%= alert %></p>	
 <div class="container">	
 	<%= yield %>
-</div>	
-
+</div>
+	<%= render '/layouts/footer' %>	
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="button.js"></script>
 </body>
 </html>

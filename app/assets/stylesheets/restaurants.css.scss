@@ -1,27 +1,30 @@
 .picture{
-	border: 4px solid white;
+	border: 4px groove white;
 	padding: 20px;
-	background-color: #e8d9c5;
+	background-color: #CCE6E6;
 	margin-top: -10px;
 	margin-left: -12px;
 	width: 700px;
 	border-radius: 35px;
+	box-shadow: 10px 10px 5px #888;
+
 
 }
 
 .desc_cont{
 
-	border: 4px solid white;
+	border: 4px groove white;
 	padding: 20px;
 	height: 300px;
 	width: 700px;
 	font-style: italic;
 	font-size: 20px;
 	line-height: 20px;
-	background-color: #e8d9c5;
+	background-color: #CCE6E6;
 	margin: 0px;
 	text-align: center;
 	border-radius: 35px;
+	box-shadow: 10px 10px 5px #888;
 }
 
 span.accent{
@@ -30,36 +33,69 @@ span.accent{
 }
 
 .res_cont{
-	border: 4px white solid;
+	border: 2px white groove;
 	width: 700px;
 	margin: 4px;
 	padding: 20px;
 	font-style: italic;
 	font-size: 20px;
 	line-height: 20px;
-	background-color: #e8d9c5;
+	background-color: #CCE6E6;
 	border-radius: 35px;
+	box-shadow: 10px 10px 5px #888;
+
 
 
 }
 
 img {
-	width: 400px;
+	width: 420px;
   	height: 250px;
   	text-align: center;
-  	padding-left: 40px;
   	margin-left: 10px;
   	border-radius: 35px;
+
 
 
 }
 .aside{
 	float:right;
-	width: 250px;
-	height: 600px;
+	width: 220px;
+	height: 680px;
 	border-radius: 25px;
 	border: 2px groove;
+	background-color: #f5dce7;
 	text-align: center;
-	margin-top: 5px;
+	margin-right: 2px;
+	box-shadow: 10px 10px 5px #888;
 }
 
+span.wrapper{
+	float:left;
+	width:200px;
+	height:200px;
+}
+span.center{
+	text-align: center;
+}
+
+img.smaller{
+	height:200px;
+	width:200px;
+	box-shadow: 10px 10px 5px #888;
+	margin: 8px;
+}
+
+ul{
+	list-style: none;
+	text-align: center;
+}
+
+li{
+	padding: 5px 0;
+	display: inline;
+	font-size: 30px;
+}
+.cntr{
+	background-color: white;
+}

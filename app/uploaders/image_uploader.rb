@@ -8,7 +8,7 @@ class ImageUploader < CarrierWave::Uploader::Base
        process :resize_to_fill => [800, 450]
     end
     version :thumbnail do
-       process :resize_to_fill => [300, 250]
+       process :resize_to_fill => [150, 150] 
     end
    	def default_url
     	ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
