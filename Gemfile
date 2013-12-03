@@ -8,6 +8,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'carrierwave'
 gem 'devise'
@@ -16,6 +17,7 @@ gem 'rmagick'
 gem 'mini_magick'
 gem 'dotenv-rails'
 gem 'aws-sdk'
+gem 'masonry-rails'
 #better_errors
 gem 'better_errors', :groups => [:development]
 gem "binding_of_caller"

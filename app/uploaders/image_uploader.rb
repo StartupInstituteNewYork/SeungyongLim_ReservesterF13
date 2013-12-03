@@ -5,7 +5,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     storage :fog
     
     version :masthead do
-       process :resize_to_fit => [600, 500]
+       process :resize_to_fill => [800, 450]
     end
     version :thumbnail do
        process :resize_to_fill => [300, 250]

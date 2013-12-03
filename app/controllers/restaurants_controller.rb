@@ -12,7 +12,7 @@ class RestaurantsController < ApplicationController
   end
   
   def create
-    @restaurant = Restaurant.create(post_restaurant)
+    @restaurant = current_owner.restaurants.build(params_restaurant)
 
     if @restaurant.save
       redirect_to @restaurant, notice: 'Restaurant was successfully created.'
@@ -23,6 +23,7 @@ class RestaurantsController < ApplicationController
   
   def show
   	@restaurant = Restaurant.find(params[:id])
+    @reservation = @restaurant.reservations.build
   end
 
   def edit
@@ -31,7 +32,7 @@ class RestaurantsController < ApplicationController
 
   def update
     @restaurant = Restaurant.find(params[:id])
-    if @restaurant.update(post_restaurant)
+    if @restaurant.update(params_restaurant)
       redirect_to @restaurant, notice: 'Restaurant was successfully updated.'
     else
       render action: "edit"
@@ -46,7 +47,7 @@ class RestaurantsController < ApplicationController
   end
 
 private
-  def post_restaurant
+  def params_restaurant
     params.require(:restaurant).permit(:name, :description, :full_address, :phone_number, :image, :menu, :remote_image_url)
   end
 

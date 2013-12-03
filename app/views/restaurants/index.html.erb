@@ -1,12 +1,15 @@
 <div class="hero-unit">
 	<h1 class="center">Book your spot <small>very easy</small></h1>
+	<h5><%= @restaurants.count(:id) %></h5>
 </div>
-<div class="center">
-<% @restaurants.each do |restaurant| %>
+<div id="restaurants">
+	<% @restaurants.each do |restaurant| %>
+	<div class="box">
 
 	<%= image_tag restaurant.image.thumbnail.url if restaurant.image? %>
     <%= link_to restaurant.name, restaurant_path(restaurant) %>
   	<% end %>
+  	</div>
 </div>  	
 	<%= link_to "New Restaurant", new_restaurant_path %>
 
