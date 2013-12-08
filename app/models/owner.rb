@@ -5,5 +5,4 @@ class Owner < ActiveRecord::Base
   has_many :reservations, through: :restaurants
   validates :name, presence: true
   validates :email, presence: true
-
 end

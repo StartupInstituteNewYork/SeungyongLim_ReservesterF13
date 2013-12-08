@@ -1,31 +1,23 @@
-body{
-	background-image: url();
-	background-repeat: no-repeat;	
-}
 .picture{
 	border: 4px groove white;
 	padding: 20px;
 	background-color: #CCE6E6;
-	margin-top: -10px;
-	margin-left: -12px;
 	width: 700px;
 	border-radius: 35px;
 	box-shadow: 10px 10px 5px #888;
-
-
 }
 
 .desc_cont{
 
 	border: 4px groove white;
-	padding: 20px;
+	padding-top: 30px;
 	height: 300px;
 	width: 700px;
 	font-style: italic;
 	font-size: 20px;
 	line-height: 20px;
 	background-color: #CCE6E6;
-	margin: 0px;
+	margin: 20px;
 	text-align: center;
 	border-radius: 35px;
 	box-shadow: 10px 10px 5px #888;
@@ -62,10 +54,10 @@ img {
 
 
 }
-.aside{
+.right{
 	float:right;
 	width: 220px;
-	height: 680px;
+	height: 600px;
 	border-radius: 25px;
 	border: 2px groove;
 	background-color: #f5dce7;
@@ -125,5 +117,18 @@ span#dropbox {
 	position: absolute;
 	z-index: 2px;
 	border-radius: 5px 20px 5px;
+}
+
+.overflo{
+	overflow: scroll;
+}
+
+.button{
+	margin: 4px;
+	clear:both;
+}
+
+.info {
+	display:block;
 }
 

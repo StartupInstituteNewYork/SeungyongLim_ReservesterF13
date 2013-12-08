@@ -1,22 +1,22 @@
 
-	<h2>Reserve now:</h2>
+<h2>Reserve your table:</h2>
+	<form role="form">
 	<%= form_for([@restaurant,@restaurant.reservations.build]) do |f| %>
-	 <p>
-	 	<%= f.label :email %>
-	 	<%= f.text_field :email %>
+	 <p class="form-group">
+	 	<%= f.text_field :email, class: 'form-control col-xs-2', placeholder: "email" %>
 	 </p>
-	 <p>
-	<span class="center"><%= f.file_field :menu %></span>
+	 <p class="form-group">
+	<span class="center"><%= f.file_field :menu, name: "open the menu" %></span>
 	 </p>
-	 <p>
+	 <p class="form-group">
 	 	<%= f.date_select :requested_date %>
 	 <p>	
-	 <p>
+	 <p class="form-group">
 	 	<%= f.label :message %>  
-	 	<%= f.text_area :message, :cols=>30, :rows=> 10 %>  
+	 	<%= f.text_area :message, :cols=>30, :rows=> 5, class: "overflo", placeholder: "leave a short/concise msg" %>  
 	 </P> 	
-	 <p>
+	 <p class="form-group">
 	 	<%= f.submit "Reservation Msg", class: "btn btn-lg btn-primary" %>
 	 </p>	
 		<% end %> 
-	
+	</form>

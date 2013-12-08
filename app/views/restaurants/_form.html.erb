@@ -1,21 +1,32 @@
-
-<%= form_for @restaurant, :html => {:multipart => true} ,data: {validate: 'parsley'} do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name, placeholder: 'name'  %><br>
-<%= f.label :description %>
-<%= f.text_area :description, placeholder: 'description' %><br>
-
-<%= f.label :full_address %>	
-<%= f.text_area :full_address, placeholder: 'full address' %><br>
-<%= f.label :phone_number %>
-<%= f.text_field :phone_number, placeholder: 'phone number', :'data-type' => 'digits'  %>
-
-<%= image_tag(@restaurant.image_url) if @restaurant.image? %>
-	<%= f.file_field :image %>
-	<%= f.hidden_field :image_cache %>	
-	<%= f.label :remove_image %>
-	<%= f.check_box :remove_image %><br>
-	<%= f.label :menu_pdf %>
-	<%= f.file_field :menu %>	
-<%= f.submit %>
-<% end %>
+<form role="form">
+	<%= form_for @restaurant, :html => {:multipart => true} ,data: {validate: 'parsley'} do |f| %>
+	<p class="form-group lg">
+		<h3><%= f.label :name %><br></h3>
+		<%= f.text_field :name, placeholder: 'name', class: "form-control"  %>
+	</P
+	<p class="form-group">
+		<h3><%= f.label :description %></h3>
+		<%= f.text_area :description, placeholder: 'description', class: "form-control" %>
+	</P>
+	<p class="form-group">
+		<h3><%= f.label :full_address %><br></h3>	
+		<%= f.text_area :full_address, placeholder: 'full address', class: "form-control" %>
+	</p>
+	<p class="form-group">
+		<h3><%= f.label :phone_number %></h3>
+		<%= f.text_field :phone_number, placeholder: 'phone number', :'data-type' => 'digits', class: "form-control"  %>
+	</p>
+	<%= image_tag(@restaurant.image_url) if @restaurant.image? %>
+		<%= f.file_field :image %>
+		<%= f.hidden_field :image_cache %>	
+		<br>
+		<%= f.label :remove_image %>
+		<%= f.check_box :remove_image %>
+		<br>
+		<p>
+			<%= f.label :menu_pdf %><%= f.file_field :menu %>
+		</p>
+		<br>	
+	<%= f.submit %>
+	<% end %>
+</p>
