@@ -1,7 +1,7 @@
 Reservester::Application.routes.draw do
   get "pages/home"
   devise_for :owners 
-  
+  get "/restaurants/page" => "restaurants#page"
   root to: 'restaurants#index'
 
   resources :owners do
@@ -11,6 +11,8 @@ Reservester::Application.routes.draw do
   resources :restaurants do
     resources :reservations
   end
+
+  
 
   # devise_for :owners do get '/owners/sign_out' => 'devise/sessions#destroy' end
   # The priority is based upon order of creation: first created -> highest priority.

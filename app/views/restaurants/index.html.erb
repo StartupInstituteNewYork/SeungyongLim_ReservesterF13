@@ -1,15 +1,28 @@
-<%= render "top" %>
 	
-<%= render "right" %>
+<div class="container">
+	<section>
+		<%= render "top" %>
+	</section>	
+	
+	<section class="main">
+		<% @restaurants.each do |restaurant| %>
+	
+		<div class="picture">
+			<%= link_to image_tag(restaurant.image.thumbnail.url, class: "smaller"),restaurant_path(restaurant) %>
+	  		<button class="btn btn-info btn-lg">Poke me</button>
+	  			
+ 		</div> <!-- /.picture -->
+  		<% end %>
+		<div id="dropbox"></div>
+  		
+	</section>
 
-<div class="frame">	
-	<% @restaurants.each do |restaurant| %>
-		<%= link_to image_tag(restaurant.image.thumbnail.url, class: "smaller"),restaurant_path(restaurant) %> 
-  		<button class="btn btn-info"><small>Poke me</small></button>
-  		<span id="dropbox" style="font-style:italic">Today's Promo:</span>	
-  	<% end %>
-</div>
-
-<div>	
-	<h2 style="margin: 20px"><%= link_to "New Restaurant", new_restaurant_path %><h2>
-</div>
+	<aside class="aside-right">
+		<%= render "right" %>
+	</aside>
+	<section>
+		<span style="margin-right:40px">
+			<h3><%= link_to "New Restaurant", new_restaurant_path %></h3>
+		</span>
+	</section>	
+</div>	

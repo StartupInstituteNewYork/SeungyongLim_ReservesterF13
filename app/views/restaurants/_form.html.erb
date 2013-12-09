@@ -3,7 +3,7 @@
 	<p class="form-group lg">
 		<h3><%= f.label :name %><br></h3>
 		<%= f.text_field :name, placeholder: 'name', class: "form-control"  %>
-	</P
+	</P>
 	<p class="form-group">
 		<h3><%= f.label :description %></h3>
 		<%= f.text_area :description, placeholder: 'description', class: "form-control" %>
@@ -16,17 +16,13 @@
 		<h3><%= f.label :phone_number %></h3>
 		<%= f.text_field :phone_number, placeholder: 'phone number', :'data-type' => 'digits', class: "form-control"  %>
 	</p>
+	<p>
 	<%= image_tag(@restaurant.image_url) if @restaurant.image? %>
 		<%= f.file_field :image %>
 		<%= f.hidden_field :image_cache %>	
 		<br>
-		<%= f.label :remove_image %>
-		<%= f.check_box :remove_image %>
-		<br>
-		<p>
-			<%= f.label :menu_pdf %><%= f.file_field :menu %>
-		</p>
-		<br>	
-	<%= f.submit %>
+	
+	<%= f.submit class: "btn btn-info" %>
 	<% end %>
-</p>
+	</p>
+</form>	

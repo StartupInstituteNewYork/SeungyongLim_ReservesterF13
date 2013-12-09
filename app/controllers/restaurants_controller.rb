@@ -46,6 +46,11 @@ class RestaurantsController < ApplicationController
     redirect_to restaurants_path
   end
 
+  def page
+      @names = Restaurant.find_all_by_name(params[:search_string])
+      @search_string=params[:search_string]
+  end
+  
 private
   def params_restaurant
     params.require(:restaurant).permit(:name, :description, :full_address, :phone_number, :image, :menu, :remote_image_url)

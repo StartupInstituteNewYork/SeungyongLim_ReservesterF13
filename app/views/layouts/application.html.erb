@@ -7,12 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= csrf_meta_tags %>
 </head>
+<body>
 	<%= render '/layouts/header' %>
 	<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>	
-<div class="container">	
 	<%= yield %>
-</div>
 	<%= render '/layouts/footer' %>	
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </body>
