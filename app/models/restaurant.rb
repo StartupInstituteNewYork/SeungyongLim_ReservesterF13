@@ -4,5 +4,5 @@ class Restaurant < ActiveRecord::Base
 	mount_uploader :menu, MenuUploader
 	has_many :reservations
 	validates :name, presence: true
-	validates :owner_id, presence: true
+	#validates :owner_id, presence: true
 end
